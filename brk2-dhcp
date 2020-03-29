@@ -1,0 +1,57 @@
+#
+# Brookend Lab (BRK2) DHCP definitions
+#  
+#
+authoritative;
+allow booting;
+allow bootp;
+allow client-updates;
+ddns-updates on;
+option option-128 code 128 = string;
+option option-129 code 129 = text;
+#
+# 172.17.0 subnet - default subnet
+#
+shared-network "VLAN0" {
+subnet 172.17.0.0 netmask 255.255.255.0 {
+
+        range 172.17.0.150 172.17.0.250;
+        option domain-name-servers 172.17.0.1;
+        option domain-name "brk2.brookendlab.com";
+        option broadcast-address 172.17.0.255;
+        option routers 172.17.0.254;
+        default-lease-time 3600;
+        max-lease-time 3600;
+        }
+}
+#
+# 172.17.11.0 subnet - VMs built via PXE
+#
+shared-network "VLAN11" {
+subnet 172.17.11.0 netmask 255.255.255.0 {
+
+	range 172.17.11.150 172.17.11.250;
+        option domain-name-servers 172.17.11.1;
+        option domain-name "brk2.brookendlab.com";
+        option broadcast-address 172.17.11.255;
+        default-lease-time 3600;
+        max-lease-time 3600;
+	next-server 172.17.11.1;
+	filename "/pxelinux.0";
+        }
+}
+#
+# 172.17.12.0 subnet - VMs build via WDS
+#
+shared-network "VLAN12" {
+subnet 172.17.12.0 netmask 255.255.255.0 {
+
+        range 172.17.12.150 172.17.12.250;
+        option domain-name-servers 172.17.12.1;
+        option domain-name "brk2.brookendlab.com";
+        option broadcast-address 172.17.12.255;
+        option routers 172.17.12.254;
+        default-lease-time 3600;
+        max-lease-time 3600;
+        }
+}
