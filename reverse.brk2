@@ -1,0 +1,24 @@
+$ORIGIN 0.17.172.IN-ADDR.ARPA.
+$TTL 86400
+@	IN	SOA	inf01.brk2.brookendlab.com. mailroom.brookend.com. (
+		3		;Serial
+		3600		;Refresh
+		1800		;Retry
+		604800		;Expire
+		86400		;Minimum TTL
+)
+@		IN	NS	inf01.brk2.brookendlab.com.
+@		IN	PTR	brk2.brookendlab.com.
+@		IN	A	172.17.0.1
+1		IN	PTR	inf01.brk2.brookendlab.com.
+3		IN	PTR	vcsa01.brk2.brookendlab.com.
+8		IN	PTR	san01.brk2.brookendlab.com.
+$ORIGIN 1.17.172.IN-ADDR.ARPA.
+1		IN	PTR	ps01-mgmt
+2		IN	PTR	ps02-mgmt
+3		IN	PTR	ps03-mgmt
+4		IN	PTR	ps04-mgmt
+5		IN	PTR	ps05-mgmt
+6		IN	PTR	ps06-mgmt
+7		IN	PTR	ps07-mgmt
+8		IN	PTR	ps08-mgmt
