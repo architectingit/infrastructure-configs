@@ -1,0 +1,38 @@
+$ORIGIN .
+$TTL 86400	; 1 day
+brk2.brookendlab.com	IN SOA	inf01.brk2.brookendlab.com. mailroom.brookend.com. (
+				4 	   ; serial
+				3600       ; refresh (1 hour)
+				1800       ; retry (30 minutes)
+				604800     ; expire (1 week)
+				86400      ; minimum (1 day)
+				)
+			NS	inf01.brk2.brookendlab.com.
+			NS	inf01.brk1.brookendlab.com.
+			A	172.17.0.1
+$ORIGIN brk2.brookendlab.com.
+inf01			A	172.17.0.1
+vcsa01			A	172.17.0.3
+san01			A	172.17.0.8
+router			A	172.17.0.254
+ps01-mgmt		A	172.17.1.1
+ps02-mgmt		A	172.17.1.2
+ps03-mgmt		A	172.17.1.3
+ps04-mgmt		A	172.17.1.4
+ps05-mgmt		A	172.17.1.5
+ps06-mgmt		A	172.17.1.6
+ps07-mgmt		A	172.17.1.7
+ps08-mgmt		A	172.17.1.8
+sc02			A	172.17.8.1
+sc02			A	172.17.8.2
+sc02			A	172.17.8.3
+ps01			A	172.17.2.1
+ps02			A	172.17.2.2
+ps03			A	172.17.2.3
+ps04			A	172.17.2.4
+ps05			A	172.17.2.5
+ps06			A	172.17.2.6
+ps07			A	172.17.2.7
+ps08			A	172.17.2.8
+$ORIGIN brk1.brookendlab.com.
+inf01			A	172.16.10.1
